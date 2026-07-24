@@ -24,3 +24,5 @@ npm run build
 npm run preview
 npm run deploy
 ```
+
+We will deploy this using cloudflare pages
