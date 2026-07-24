@@ -8,7 +8,6 @@ A modern React + Vite website for a premium men's and children's clothing shop.
 - Home, Men's, and Children's collection pages
 - High-quality tailoring and fashion images from Unsplash
 - Mobile-first responsive styling
-- Built for Cloudflare Pages deployment
 
 ## Development
 
