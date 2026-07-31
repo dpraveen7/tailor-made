@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"/c/Users/LENOVO/AppData/Local/ms-playwright/\" 2>/dev/null)",
+      "Read(//c/Users/LENOVO/AppData/Local/ms-playwright//**)",
+      "Bash(npm ls *)",
+      "Bash(npm root *)"
+    ]
+  }
+}

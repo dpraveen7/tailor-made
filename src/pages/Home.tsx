@@ -6,15 +6,26 @@ function Home() {
   return (
     <div className="home">
       <section className="hero">
-        <div className="hero-image">
-          <img src={images.hero} alt="Premium tailored suits" />
+        <div className="hero-image hero-tailoring-scene" aria-hidden="true">
+          <div className="hero-tailoring-layer hero-tailoring-fabric"></div>
+          <div className="hero-tailoring-layer hero-tailoring-stitch"></div>
+          <div className="hero-tailoring-layer hero-tailoring-thread"></div>
+          <video
+            className="hero-video"
+            src={images.heroVideo}
+            poster={images.heroPoster}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
           <span className="hero-tagline">EST. 2024</span>
           <h1>Welcome to Tailor Made</h1>
           <p className="hero-subtitle">
-            Premium bespoke clothing for Men and Children
+            Bespoke tailoring for business leaders, polished professionals, and distinguished style.
           </p>
           <div className="hero-buttons">
             <Link to="/men" className="btn btn-primary">
