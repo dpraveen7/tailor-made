@@ -2,7 +2,7 @@ export const images = {
   hero: 'https://images.unsplash.com/photo-1584184924103-e310d9dc82fc?w=1600&q=85&auto=format&fit=crop',
   heroPoster:
     'https://images.unsplash.com/photo-1598808503746-f34c53b9323e?w=1600&q=85&auto=format&fit=crop',
-  heroVideo: 'https://videos.pexels.com/video-files/6764966/6764966-hd_1280_720_25fps.mp4',
+  heroVideo: '/videos/shop-hero.mp4',
   tailorShop:
     'https://images.unsplash.com/photo-1623578059518-bbdb071eab81?w=1200&q=85&auto=format&fit=crop',
   sewingMachine:
