@@ -23,6 +23,19 @@ export const images = {
   },
 }
 
+export const customerImages = [
+  '/customers/Customer1.jpeg',
+  '/customers/Customer2.jpeg',
+  '/customers/Customer3.jpeg',
+  '/customers/Customer4.jpeg',
+  '/customers/Customer7.jpeg',
+  '/customers/Customer8.jpeg',
+  '/customers/Customer9.jpeg',
+  '/customers/Customer10.jpeg',
+  '/customers/Customer11.jpeg',
+  '/customers/Customer12.jpeg',
+]
+
 export const galleryImages = [
   {
     src: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&q=85&auto=format&fit=crop',

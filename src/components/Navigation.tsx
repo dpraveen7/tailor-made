@@ -19,6 +19,9 @@ function Navigation() {
           <li>
             <NavLink to="/children">Children</NavLink>
           </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
         </ul>
       </div>
     </nav>

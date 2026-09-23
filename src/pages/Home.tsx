@@ -1,39 +1,52 @@
 import { Link } from 'react-router-dom'
-import { images, galleryImages } from '../assets/images'
+import { images, galleryImages, customerImages } from '../assets/images'
 import './Home.css'
 
 function Home() {
   return (
     <div className="home">
       <section className="hero">
-        <div className="hero-image hero-tailoring-scene" aria-hidden="true">
-          <div className="hero-tailoring-layer hero-tailoring-fabric"></div>
-          <div className="hero-tailoring-layer hero-tailoring-stitch"></div>
-          <div className="hero-tailoring-layer hero-tailoring-thread"></div>
-          <video
-            className="hero-video"
-            src={images.heroVideo}
-            poster={images.heroPoster}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-          <div className="hero-overlay"></div>
+        <div className="container hero-grid">
+          <div className="hero-content">
+            <span className="hero-tagline">EST. 2024</span>
+            <h1>Welcome to Tailor Made</h1>
+            <p className="hero-subtitle">
+              Bespoke tailoring for business leaders, polished professionals, and distinguished style.
+            </p>
+            <div className="hero-buttons">
+              <Link to="/men" className="btn btn-primary">
+                Shop Men
+              </Link>
+              <Link to="/children" className="btn btn-secondary">
+                Shop Children
+              </Link>
+            </div>
+          </div>
+          <div className="hero-media" aria-hidden="true">
+            <video
+              className="hero-video"
+              src={images.heroVideo}
+              poster={images.heroPoster}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
         </div>
-        <div className="hero-content">
-          <span className="hero-tagline">EST. 2024</span>
-          <h1>Welcome to Tailor Made</h1>
-          <p className="hero-subtitle">
-            Bespoke tailoring for business leaders, polished professionals, and distinguished style.
-          </p>
-          <div className="hero-buttons">
-            <Link to="/men" className="btn btn-primary">
-              Shop Men
-            </Link>
-            <Link to="/children" className="btn btn-secondary">
-              Shop Children
-            </Link>
+      </section>
+
+      <section className="trusted">
+        <div className="container">
+          <span className="section-label">Customers Who Trusted Us</span>
+        </div>
+        <div className="marquee">
+          <div className="marquee-track">
+            {[...customerImages, ...customerImages].map((src, index) => (
+              <div className="marquee-item" key={index}>
+                <img src={src} alt="Happy Tailor Made customer" loading="lazy" />
+              </div>
+            ))}
           </div>
         </div>
       </section>

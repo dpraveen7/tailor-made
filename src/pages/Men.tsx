@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { images } from '../assets/images'
+import ShirtTryOn from '../components/ShirtTryOn'
 import './Men.css'
 
 function Men() {
@@ -94,9 +95,7 @@ function Men() {
       <section className="tailoring-banner">
         <div className="container">
           <div className="tailoring-grid">
-            <div className="tailoring-image">
-              <img src={images.tailorShop} alt="Tailor at work" />
-            </div>
+            <ShirtTryOn />
             <div className="tailoring-text">
               <span className="section-label">Bespoke</span>
               <h2>Custom Tailoring Available</h2>
