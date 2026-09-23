@@ -1,9 +1,39 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { images } from '../assets/images'
+import { images, cottonCollection } from '../assets/images'
 import ShirtTryOn from '../components/ShirtTryOn'
 import './Men.css'
 
+type Fabric = (typeof cottonCollection)[number]
+
 function Men() {
+  const [expanded, setExpanded] = useState<Fabric | null>(null)
+  // After closing, the cursor is usually still over the same circle; don't
+  // reopen it until the cursor has left that circle.
+  const [suppressed, setSuppressed] = useState<string | null>(null)
+
+  const closeExpanded = () => {
+    if (!expanded) return
+    setSuppressed(expanded.name)
+    setExpanded(null)
+  }
+
+  useEffect(() => {
+    if (!expanded) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSuppressed(expanded.name)
+        setExpanded(null)
+      }
+    }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [expanded])
+
   const products = [
     {
       id: 1,
@@ -91,6 +121,48 @@ function Men() {
           </div>
         </div>
       </section>
+
+      <section className="cotton-section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="section-label">New Arrivals</span>
+            <h2>Latest Collection in Cotton</h2>
+          </div>
+          <div className="cotton-grid">
+            {cottonCollection.map((fabric) => (
+              <figure key={fabric.name} className="cotton-item">
+                <div
+                  className="cotton-circle"
+                  onMouseEnter={() => {
+                    if (suppressed !== fabric.name) setExpanded(fabric)
+                  }}
+                  onMouseLeave={() => setSuppressed(null)}
+                  onClick={() => setExpanded(fabric)}
+                >
+                  <img src={fabric.image} alt={`${fabric.name} cotton fabric`} loading="lazy" />
+                </div>
+                <figcaption>{fabric.name}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {expanded && (
+        <div
+          className="fabric-fullscreen"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${expanded.name} cotton fabric`}
+          onClick={closeExpanded}
+        >
+          <img src={expanded.image} alt={`${expanded.name} cotton fabric`} />
+          <div className="fabric-fullscreen-caption">
+            <h3>{expanded.name}</h3>
+            <p>Click anywhere to close</p>
+          </div>
+        </div>
+      )}
 
       <section className="tailoring-banner">
         <div className="container">

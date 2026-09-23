@@ -23,6 +23,18 @@ export const images = {
   },
 }
 
+export const cottonCollection = [
+  { name: 'Royal Blue', image: '/cloths/RoyalBlue1.jpeg' },
+  { name: 'Blue & White Stripes', image: '/cloths/BlueandWhiteStripes1.jpeg' },
+  { name: 'Pastel Pink', image: '/cloths/PastalPink1.jpeg' },
+  { name: 'Pista Green', image: '/cloths/PistaGreen1.jpeg' },
+  { name: 'Purple', image: '/cloths/Purple1.jpeg' },
+  { name: 'Coffee Brown', image: '/cloths/CoffeeBrown.jpeg' },
+  { name: 'Beige Grey', image: '/cloths/BeigGray.jpeg' },
+  { name: 'Light Grey', image: '/cloths/LightGrey.jpeg' },
+  { name: 'Dark Grey', image: '/cloths/DarkGrey.jpeg' },
+]
+
 export const customerImages = [
   '/customers/Customer1.jpeg',
   '/customers/Customer2.jpeg',

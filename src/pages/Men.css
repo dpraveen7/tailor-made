@@ -1,3 +1,153 @@
 .men-page {
   min-height: 100vh;
 }
+
+.cotton-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #1b2440 0%, #26345a 100%);
+}
+
+.cotton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2.5rem 2rem;
+  justify-items: center;
+}
+
+.cotton-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.cotton-circle {
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #1b2440;
+  box-shadow: 0 0 0 3px var(--primary), 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.cotton-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cotton-item:hover .cotton-circle img {
+  transform: scale(1.1);
+}
+
+.cotton-item figcaption {
+  font-weight: 600;
+  color: var(--text-h);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .cotton-section {
+    padding: 3rem 0;
+  }
+
+  .cotton-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+
+  .cotton-circle {
+    width: min(140px, 38vw);
+  }
+}
+
+.cotton-section .section-label {
+  color: var(--primary);
+}
+
+.cotton-section h2,
+.cotton-section .cotton-item figcaption {
+  color: #ffffff;
+}
+
+.cotton-circle {
+  cursor: zoom-in;
+}
+
+.fabric-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 14, 28, 0.94);
+  cursor: pointer;
+  animation: fabric-fade-in 0.25s ease;
+}
+
+/* Portrait fabric photos are turned 90° and swap width/height so they fill a
+   landscape screen edge to edge. */
+.fabric-fullscreen img {
+  --fabric-rotate: rotate(90deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vh;
+  height: 100vw;
+  max-width: none;
+  object-fit: cover;
+  transform: translate(-50%, -50%) var(--fabric-rotate);
+  animation: fabric-zoom-in 0.3s ease;
+}
+
+/* On portrait screens (phones) the photo already matches, so just fill */
+@media (orientation: portrait) {
+  .fabric-fullscreen img {
+    --fabric-rotate: rotate(0deg);
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.fabric-fullscreen-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  color: white;
+  pointer-events: none;
+}
+
+.fabric-fullscreen-caption h3 {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.fabric-fullscreen-caption p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@keyframes fabric-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fabric-zoom-in {
+  from { transform: translate(-50%, -50%) var(--fabric-rotate) scale(0.6); }
+  to { transform: translate(-50%, -50%) var(--fabric-rotate) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fabric-fullscreen,
+  .fabric-fullscreen img {
+    animation: none;
+  }
+}
