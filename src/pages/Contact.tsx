@@ -26,13 +26,13 @@ function Contact() {
       title: 'Call Us',
       lines: [
         { text: 'Phone: 0484 3144536', href: 'tel:+914843144536' },
-        { text: 'Mobile: +91 94450 18153', href: 'tel:+919445018153' },
+        { text: 'Mobile: +91 97450 18153', href: 'tel:+919745018153' },
       ],
     },
     {
       icon: '✉',
       title: 'Email Us',
-      lines: [{ text: 'ambady@tailor-made.com', href: 'mailto:ambady@tailor-made.com' }],
+      lines: [{ text: 'ambadymk@gmail.com', href: 'mailto:ambadymk@gmail.com' }],
     },
     {
       icon: '🕒',
